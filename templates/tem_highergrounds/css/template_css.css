@@ -458,7 +458,7 @@ input.button {
 	width: 820px;
 	font-size: 95%;	
 	text-align: left;
-	padding: 15px 0;
+	padding: 10px 0px 30px 0px;
 	background: url("../images/footer-bottom.jpg") no-repeat center bottom;	
 }
 #footer-wrap a {
