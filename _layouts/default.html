@@ -44,36 +44,35 @@
           <div class="sidebar-module sidebar-module-inset">
             <h4>Links</h4>
              <ul class="list-unstyled">
-               <li><a href="https://www.linkedin.com/in/platour">www.linkedin.com/in/platour</li>
-               <li><a href="https://github.com/swisspol/">github.com/swisspol/</a></li>
+               <li><a href="https://{{ site.linked_in }}">{{ site.linked_in }}</li>
+               <li><a href="https://{{ site.github }}">{{ site.github }}</a></li>
              </ul>
           </div>
           
-          <div class="sidebar-module">
-            <h4>Current Public Projects</h4>
-            <ul class="list-unstyled">
-            {% for project in site.data.current-public-projects %}
-              <li><a href="{{ project.url }}">{{ project.name }}</a></li>
-            {% endfor %}
-            </ul>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Everpix</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://www.everpix.com">Everpix</li>
+             </ul>
           </div>
           
-          <div class="sidebar-module">
-            <h4>Former Major Projects</h4>
-            <ul class="list-unstyled">
-              {% for project in site.data.former-major-projects %}
-                <li><a href="{{ project.url }}">{{ project.name }}</a></li>
-              {% endfor %}
-            </ul>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Cooliris</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://www.cooliris.com/ipad/discover">Discover for Wikipedia</a></li>
+               <li><a href="http://www.decksapp.com">Decks</li>
+               <li><a href="http://www.kpcb.com">KPCB CEO Summit 2010 (official iPad application)</a></li>
+               <li><a href="http://developer.decksapp.com/">PageKit Technology (sold to Amobee as part of AdJitsu)</a></li>
+             </ul>
           </div>
           
-          <div class="sidebar-module">
-            <h4>Former Public Projects</h4>
-            <ul class="list-unstyled">
-              {% for project in site.data.former-public-projects %}
-                <li><a href="{{ project.url }}">{{ project.name }}</a></li>
-              {% endfor %}
-            </ul>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Apple</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://en.wikipedia.org/wiki/Quartz_Composer">Quartz Composer</li>
+               <li><a href="http://developer.apple.com/iphone/">iPhone SDK (First Beta)</a></li>
+               <li><a href="http://www.webkit.org">WebKit (Acceleration &amp; 3D)</a></li>
+             </ul>
           </div>
           
         </div>
