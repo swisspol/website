@@ -1,0 +1,12 @@
+- url: https://code.google.com/p/cooliris-toolkit/
+  name: Cooliris ToolKit for iOS
+- url: https://github.com/robbiehanson/CocoaHTTPServer
+  name: WebDAV Support for Cocoa HTTP Server
+- url: http://code.google.com/p/ios-static-libraries/
+  name: iOS Static Libraries
+- url: http://code.google.com/p/polkit/
+  name: PolKit
+- url: https://github.com/swisspol/PolParser
+  name: PolParser
+- url: http://code.google.com/p/polactions/
+  name: PolActions

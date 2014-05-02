@@ -1,0 +1,13 @@
+# Reference docs
+# http://jekyllrb.com/docs/frontmatter/
+# http://jekyllrb.com/docs/collections/
+# http://jekyllrb.com/docs/datafiles/
+# http://docs.shopify.com/themes/liquid-basics/logic
+# http://docs.shopify.com/themes/liquid-basics/output
+
+name: Pol-Online
+markdown: redcarpet
+collections:
+- projects
+- open_source
+- software_archives
