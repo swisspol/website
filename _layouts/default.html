@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/default.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item {% if page.url == '/index.html' %} active {% endif %}" href="index.html">Home</a>
+          <a class="blog-nav-item {% if page.url == '/projects.html' %} active {% endif %}" href="projects.html">Projects</a>
+          <a class="blog-nav-item {% if page.url == '/open-source.html' %} active {% endif %} " href="open-source.html">Open Source</a>
+          <a class="blog-nav-item {% if page.url == '/software-archives.html' %} active {% endif %}" href="software-archives.html">Software Archives</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="container">
+      
+      <div class="blog-header">
+        <h1 class="blog-title">Pol-Online</h1>
+        <p class="lead blog-description">The personal website of Pierre-Olivier Latour a.k.a. Pol.</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          {{ content }}
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Profile</h4>
+             <ul class="list-unstyled">
+               <li><a href="https://{{ site.linked_in }}">{{ site.linked_in }}</li>
+               <li><a href="https://{{ site.github }}">{{ site.github }}</a></li>
+             </ul>
+          </div>
+          
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>@33cube</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://www.everpix.com">Everpix</li>
+             </ul>
+          </div>
+          
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>@Cooliris</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://www.cooliris.com/ipad/discover">Discover for Wikipedia</a></li>
+               <li><a href="http://www.decksapp.com">Decks</li>
+               <li><a href="http://www.kpcb.com">KPCB CEO Summit 2010 (official iPad application)</a></li>
+               <li><a href="http://developer.decksapp.com/">PageKit Technology (sold to Amobee as part of AdJitsu)</a></li>
+             </ul>
+          </div>
+          
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>@Apple</h4>
+             <ul class="list-unstyled">
+               <li><a href="http://en.wikipedia.org/wiki/Quartz_Composer">Quartz Composer</li>
+               <li><a href="http://developer.apple.com/iphone/">iPhone SDK (First Beta)</a></li>
+               <li><a href="http://www.webkit.org">WebKit (Acceleration &amp; 3D)</a></li>
+             </ul>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="blog-footer">
+      <p><a href="mailto:info@pol-online.net">info@pol-online.net</a></p>
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
