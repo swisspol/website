@@ -5,6 +5,7 @@
   Base Settings
 ———————————–———————————–*/
 
+$container-desktop: 970px;
 $container-large-desktop: 970px;
 
 $font-family-base: "Muli", sans-serif;
@@ -148,7 +149,7 @@ a {
 }
 
 .panel-body {
-  height: 280px;
+  height: 275px;
   overflow: hidden;
   background-color: $color-card;
 }
