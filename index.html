@@ -42,10 +42,18 @@
         {% for card in site.posts %}
           <div class="col-sm-4">
             <div class="panel panel-default">
+              {% if card.highlight %}
+              <div class="panel-heading panel-heading-highlight">
+              {% else %}
               <div class="panel-heading">
+              {% endif %}
                 <h3 class="panel-title">{{ card.type }}</h3>
               </div>
+              {% if card.highlight %}
+              <div class="panel-body panel-body-highlight">
+              {% else %}
               <div class="panel-body">
+              {% endif %}
                 <h4>
                   <a href="{{ card.link }}">{{ card.heading }}</a>
                 </h4>
@@ -63,7 +71,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <div class="copyright">
+          <div class="resume-copyright">
             <p>Original Jekyll template by <a href="http://ellekasai.github.io/resumecards/">Elle Kasai</a><p>
           </div>
         </div>

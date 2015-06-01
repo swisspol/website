@@ -1,23 +1,8 @@
-# Theme customization is done on this file instead of _config.yml so that
-# you don't have to restart Jekyll to see changes.
-
 photo: "photo.jpg"
 name: "Pierre-Olivier Latour"
-copy: "This is an exhaustive list of software projects I worked on through the years. Check out my professional experience on LinkedIn, or open source work on GitHub."
+copy: "This is an exhaustive list of software projects I worked on through the years (major ones are highlighted). Check out my professional experience on LinkedIn or open source work on GitHub."
 twitter: "swisspol"
 linkedin: "platour"
 github: "swisspol"
 website: "pol-online.net"
 email: "pol@mac.com"
-
-# Color scheme based on http://www.materialui.co/colors.
-# Possible values:
-# - default
-# - red
-# - pink
-# - brown
-# - blue
-# - purple
-# - teal
-# - green
-color: default

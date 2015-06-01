@@ -28,79 +28,16 @@ $grid-gutter-width: 20px;
   Theme Colors
 ———————————–———————————–*/
 
-$default-base: #5F7C8A;
-$red-base: #C46767;
-$pink-base: #D95D87;
-$blue-base: #59A2DD;
-$purple-base: #8064A7;
-$brown-base: #785447;
-$teal-base: #54C2B8;
-$green-base: #6BAB6E;
-
-$all-colors: ("default": ("base": $default-base,
-                          "sub": lighten($default-base, 10%),
-                          "text": darken($default-base, 50%),
-                          "muted": grayscale($default-base),
-                          "bg": lighten($default-base, 45%),
-                          "heading": lighten($default-base, 40%)),
-              "red": ("base": $red-base,
-                      "sub": lighten($red-base, 20%),
-                      "text": darken($red-base, 50%),
-                      "muted": grayscale($red-base),
-                      "bg": lighten($red-base, 40%),
-                      "heading": lighten($red-base, 30%)),
-              "pink": ("base": $pink-base,
-                       "sub": lighten($pink-base, 20%),
-                       "text": darken($pink-base, 50%),
-                       "muted": grayscale($pink-base),
-                       "bg": lighten($pink-base, 38%),
-                       "heading": lighten($pink-base, 30%)),
-              "brown": ("base": $brown-base,
-                       "sub": lighten($brown-base, 10%),
-                       "text": darken($brown-base, 50%),
-                       "muted": grayscale($brown-base),
-                       "bg": lighten($brown-base, 50%),
-                       "heading": lighten($brown-base, 40%)),
-              "blue": ("base": $blue-base,
-                       "sub": lighten($blue-base, 10%),
-                       "text": darken($blue-base, 50%),
-                       "muted": grayscale($blue-base),
-                       "bg": lighten($blue-base, 35%),
-                       "heading": lighten($blue-base, 25%)),
-              "purple": ("base": $purple-base,
-                          "sub": lighten($purple-base, 20%),
-                          "text": darken($purple-base, 50%),
-                          "muted": grayscale($purple-base),
-                          "bg": lighten($purple-base, 40%),
-                          "heading": lighten($purple-base, 30%)),
-              "teal":  ("base": $teal-base,
-                        "sub": lighten($teal-base, 10%),
-                        "text": darken($teal-base, 50%),
-                        "muted": grayscale($teal-base),
-                        "bg": lighten($teal-base, 40%),
-                        "heading": lighten($teal-base, 30%)),
-              "green": ("base": $green-base,
-                        "sub": lighten($green-base, 10%),
-                        "text": darken($green-base, 50%),
-                        "muted": grayscale($green-base),
-                        "bg": lighten($green-base, 40%),
-                        "heading": lighten($green-base, 30%)));
-
-$theme-color: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "base");
-$theme-sub: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "sub");
-$theme-text: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "text");
-$theme-muted: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "muted");
-$theme-bg: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "bg");
-$theme-heading: map-get(map-get($all-colors, "{{ site.data.info.color }}"), "heading");
-
-$color-base: $theme-color;
-$color-sub: $theme-sub;
-$color-text: $theme-text;
-$color-muted: $theme-muted;
-$color-bg: $theme-bg;
-$color-heading: $theme-heading;
-
-$color-list: "default", "red", "pink", "brown", "blue", "purple", "teal", "green";
+$color-base: #5F7C8A;
+$color-highlight: #FDD835;
+$color-sub: lighten($color-base, 10%);
+$color-text: darken($color-base, 50%);
+$color-muted: grayscale($color-base);
+$color-bg: lighten($color-base, 45%);
+$color-heading: lighten($color-base, 40%);
+$color-heading-highlight: $color-highlight;
+$color-card: #FFFFFF;
+$color-card-highlight: #FFFFFF;
 
 /*———————————–———————————–
   Base spaces
@@ -122,13 +59,6 @@ $space-lg: 30px;
 body {
   background-color: $color-bg;
   color: $color-text;
-
-  @each $color-name in $color-list {
-    &.theme-#{$color-name} {
-      background-color: map-get(map-get($all-colors, $color-name), "bg");
-      color: map-get(map-get($all-colors, $color-name), "text");
-    }
-  }
 }
 
 header,
@@ -150,12 +80,6 @@ h1, h2, h3, h4, h5, h6,
 .panel-title,
 .resume-contact {
   color: $color-base;
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      color: map-get(map-get($all-colors, $color-name), "base");
-    }
-  }
 }
 
 h1 {
@@ -188,15 +112,6 @@ a {
   &:hover {
     color: $color-sub;
   }
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      color: map-get(map-get($all-colors, $color-name), "base");
-      &:hover {
-        color: map-get(map-get($all-colors, $color-name), "sub");
-      }
-    }
-  }
 }
 
 /*++ Classes +++++++++++++++++++++++*/
@@ -214,17 +129,15 @@ a {
 .panel-default > .panel-heading {
   background-color: $color-heading;
   border: none;
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      background-color: map-get(map-get($all-colors, $color-name), "heading");
-    }
-  }
 }
 
 .panel-heading {
   height: 35px;
   overflow: hidden;
+}
+
+.panel-default > .panel-heading-highlight {
+  background-color: $color-heading-highlight;
 }
 
 .panel-title {
@@ -237,6 +150,11 @@ a {
 .panel-body {
   height: 280px;
   overflow: hidden;
+  background-color: $color-card;
+}
+
+.panel-body-highlight {
+  background-color: $color-card-highlight;
 }
 
 /* Button */
@@ -247,13 +165,6 @@ a {
 
 .btn-primary {
   @include button-variant(#fff, $color-base, darken($color-base, 10%));
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      @include button-variant(#fff, map-get(map-get($all-colors, $color-name), "base"),
-      darken(map-get(map-get($all-colors, $color-name), "base"), 10%));
-    }
-  }
 }
 
 /*———————————–———————————–
@@ -261,17 +172,6 @@ a {
 ———————————–———————————–*/
 
 /*++ Resume Content Area +++++++++++++++++++++++*/
-
-.resume-nav {
-  padding-top: 7px;
-  color: #999;
-  text-align: center;
-}
-
-.resume-dropdown {
-  display: inline-block;
-  margin: 0 $space-xs 0 $space-sm;
-}
 
 .resume-content {
   padding-top: $space-md * 2;
@@ -288,14 +188,6 @@ a {
     border: 1px solid $color-sub;
   }
 
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      img {
-        border: 1px solid map-get(map-get($all-colors, $color-name), "sub");
-      }
-    }
-  }
-
   + .resume-baseinfo {
     margin-left: 140px;
   }
@@ -306,12 +198,6 @@ a {
     color: $color-base;
     font-family: "Quando", sans-serif;
     font-size: $font-size-base - 1;
-
-    @each $color-name in $color-list {
-      .theme-#{$color-name} & {
-        color: map-get(map-get($all-colors, $color-name), "base");
-      }
-    }
   }
 }
 
@@ -330,26 +216,14 @@ a {
   color: $color-sub;
   font-family: "Quando", sans-serif;
   font-size: $font-size-base;
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      color: map-get(map-get($all-colors, $color-name), "sub");
-    }
-  }
 }
 .resume-duration {
   color: $color-muted;
   line-height: 1.4;
-
-  @each $color-name in $color-list {
-    .theme-#{$color-name} & {
-      color: map-get(map-get($all-colors, $color-name), "muted");
-    }
-  }
 }
 
-.copyright,
-.copyright a {
+.resume-copyright,
+.resume-copyright a {
   font-size: $font-size-base - 4;
   color: darken($color-bg, 20%);
   text-align: center;
@@ -462,9 +336,9 @@ a {
   .resume-duration {
     font-size: $font-size-base - 5;
   }
-  
+
   .copyright {
     visibility: hidden;
   }
-  
+
 }
